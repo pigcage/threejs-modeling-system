@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ThreeJS在线建模系统</title>
+	<link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+	<div id="loadWindow">
+		<p>请从下拉列表中选择要加载的文件：</p>
+		<select name="fileNames" id="fileNames"></select><br>
+		<input type="button" value="确定" onclick="confirmLoad()"/>
+		<input type="button" value="取消" onclick="cancleLoad()"/>
+	</div>
+	<div id="header">
+		<t1>ThreeJS在线建模系统</t1>
+			<ul>
+				<a href="https://github.com/pigcage"><li>Github</li></a>
+				<a href="help.html"><li>使用帮助</li></a>
+			</ul>
+	</div>
+	<div id="container">
+		<div id="menu">
+			<ul>
+				<li>
+					<ul class="ctrl_topBtns">
+						<!-- <a id="scrollIn" href="javascript:void(0)"><li>保存</li></a>
+						<a id="undo" href="javascript:void(0)"><li>撤销</li></a>
+						<a id="redo" href="javascript:void(0)"><li>重做</li></a> -->
+					</ul>
+				</li>
+				<li>
+					<div class="menuBtn">基本几何体</div>
+					<div>
+						<div class="mdBtn" onclick="modelSelector('cube')">
+							<img src="./img/m_1.gif" />
+							<p>正方体</p>
+						</div>
+						<div class="mdBtn" onclick="modelSelector('sphere')">
+							<img src="./img/m_1.gif" />
+							<p>圆球体</p>
+						</div>
+						<div class="mdBtn" onclick="modelSelector('cylinder')">
+							<img src="./img/m_1.gif"/>
+							<p>柱/椎体</p>
+						</div>
+						<div class="mdBtn" onclick="modelSelector('torus')">
+							<img src="./img/m_1.gif" />
+							<p>圆环</p>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="menuBtn">高级几何体</div>
+				</li>
+				<li>
+					<div class="menuBtn">数字与字母</div>
+					<div>
+						<ul class="ctrl_menuBtns">
+							<a id="createNumbers" href="javascript:void(0)"><li>生成数字</li></a>
+							<a id="createLetters" href="javascript:void(0)"><li style="margin-left:-2px;">生成字母</li></a>
+						</ul>
+					</div>
+				</li>
+				<li>
+					<div class="menuBtn">导入模型</div>
+					<div>
+						<ul class="ctrl_menuBtns">
+							<a id="save" href="javascript:void(0)" onclick="saveModel()"><li>保存为JSON格式</li></a>
+							<a id="load" href="javascript:void(0)" onclick="loadModel()"><li style="margin-left:-2px;">从JSON格式中导入</li></a>
+						</ul>
+					</div>
+				</li>
+			</ul>
+			<!-- <input id="cmdInput" type="text" /><a id="execute" href="javascript:void(0)"><div>执行</div></a>
+			<div id="cmdWindow"><p>根据提示在上方窗口输入指令...</p></div> -->
+		</div>
+		<div id="mainCanvasDiv"></div>
+	</div>
+	<script src="./js/_three.js"></script>
+	<script src="./js/OrbitControls.js"></script>
+	<script src="./js/TransformControls.js"></script>
+	<script src="./js/Detector.js"></script>
+	<script src="./js/htmlEvents.js"></script>
+	<script src="./js/DAT.GUI.min.js"></script>
+	<script src="./js/OBJExporter.js"></script>
+	<script src="./js/init.js"></script>
+	<script src="./js/functions.js"></script>
+	<script src="./js/geometry.js"></script>
+</body>
+</html>
